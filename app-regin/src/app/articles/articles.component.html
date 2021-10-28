@@ -1,0 +1,25 @@
+
+<div class="wraper">
+    <div class="content-wireframe">
+        <div class="heder-wireframe">
+            <div class="titles">
+                <span class="text_first">{{titleFirst}}</span>
+                <span class="text_last">{{titleLarst}}</span>
+            </div>
+        </div>
+        <div class="body-wireframe">
+            <table>
+                <ng-container *ngFor="let article of orderedArticles; index as i">
+                    <tr class="bb-none" (click)="openUrl(article.story_url)" *ngIf="!article.isDelete">
+                        <td class="row-title">{{article.story_title}}<span> - {{article.author}} -</span></td>
+                        <td class="row-date">{{article.created_at | formatDate}}</td>
+                        <td class="row-action">
+                            <img src="assets/icon-tash.svg" alt="tash" title="Eliminar" (click)="deleteArticle($event, article._id)">
+                        </td>
+                    </tr>
+                </ng-container>
+            </table>
+        </div>
+    </div>
+</div>
+

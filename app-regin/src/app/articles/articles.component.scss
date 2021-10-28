@@ -1,0 +1,82 @@
+.wraper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content-wireframe {
+        width: 80%;
+        .heder-wireframe {
+            width: 100%;
+            height: 250px;
+            background-color: rgb(0, 0, 102);
+            display: table;
+            .titles {
+                display: table-cell;
+                vertical-align: middle;
+                padding-left: 45px;
+                span.text_first {
+                    color: #fff;
+                    font-size: 3.5em;
+                    display: block;
+                    font-weight: 600;
+                }
+                span.text_last {
+                    color: #fff;
+                    font-size: 1.5em;
+                    margin-top: 5px;
+                    display: block;
+                }
+            }
+    
+        }
+    
+        .body-wireframe {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            table {
+                width: 98%;
+                background-color: aqua;
+                border-collapse: collapse;
+                margin-top: 5px;
+                tr:hover {
+                    background-color: #fafafa;
+                }
+                tr {
+                    cursor: pointer;
+                    border-top: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                    background-color: #fff;
+                    height: 50px;
+                    font-size: 13pt;
+                    .row-title {
+                        width: 80%;
+                        padding-left: 20px;
+                        color:#333;
+                        span {
+                            color:#999;
+                        }
+                    }
+                    .row-date {
+                        width: 15%;
+                        padding-left: 5px;
+                        color:#333;
+                    }
+                    .row-action {
+                        width: 5%;
+                        text-align: center;
+                        img {
+                            width: 17px;
+                            height: 17px;
+                        }
+                    }
+                }
+                .bb-none {
+                    border-top: none;
+                }
+            }
+        }
+    
+    }
+}
+
