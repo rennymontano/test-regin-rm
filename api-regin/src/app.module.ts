@@ -8,7 +8,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 @Module({
   imports: [
     ArticlesModule,
-    MongooseModule.forRoot('mongodb://localhost/nest-articles'), 
+    MongooseModule.forRoot('mongodb://mongo:27017/nest-articles'), 
     ScheduleModule.forRoot()
   ],
   controllers: [AppController],

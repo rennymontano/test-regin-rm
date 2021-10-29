@@ -31,9 +31,7 @@ export class ArticlesComponent implements OnInit {
     .subscribe(
       (res: any) => {
         this.orderedArticles =  this.orderDate(res.data);
-        if(this.orderedArticles.length > 0) {
-          console.log(this.orderedArticles)
-        } else {
+        if(this.orderedArticles.length === 0) {
           this.getInitData()
         }
     })
@@ -45,6 +43,11 @@ export class ArticlesComponent implements OnInit {
       (res: any) => {
         this.orderedArticles =  this.orderDate(res.data);
     })
+  }
+
+  refreshArticle(event: any) {
+    this.orderedArticles = [];
+    this.getDataArticles();
   }
 
   openUrl(url: string) {

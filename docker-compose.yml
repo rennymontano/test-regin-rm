@@ -1,0 +1,26 @@
+version: "3"
+
+services: 
+  server: 
+    container_name: regin-api
+    restart: always
+    build: ./api-regin
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo
+  client:
+    container_name: regin-app
+    restart: always
+    build: ./app-regin
+    ports:
+      - "4200:4200"
+    depends_on:
+      - server
+  mongo:
+    container_name: mongodb
+    image: mongo
+    expose:
+      - "27017"
+    ports:
+      - "27017:27017"

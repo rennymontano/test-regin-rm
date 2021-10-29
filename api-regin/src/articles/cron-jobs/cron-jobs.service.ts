@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { ArticlesService } from '../articles.service';
-import {CreateArticleDto} from '../dto/ceate-Article.dto';
+import {CreateArticleDto} from '../dto/ceate-article-dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose'
 import { Article } from '../interfaces/article';

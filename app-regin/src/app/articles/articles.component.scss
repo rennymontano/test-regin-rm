@@ -77,6 +77,16 @@
             }
         }
     
+        .icon-refresh {
+            display: table-cell;
+            vertical-align: bottom;
+            img{
+                width: 30px;
+                margin-left: -25px;
+                margin-bottom: 10px;
+                cursor: pointer;
+            }
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 import { Body, Controller, Get, HttpStatus, NotFoundException, Param, Put, Query, Res } from '@nestjs/common';
-import {CreateArticleDto} from './dto/ceate-Article.dto';
+import {CreateArticleDto} from './dto/ceate-article-dto';
 import { ArticlesService } from './articles.service';
 import { CronJobsService } from './cron-jobs/cron-jobs.service';
 
