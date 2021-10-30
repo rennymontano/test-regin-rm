@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:api": "npm run start --workspace=api-regin",
     "dev:api": "npm run start:dev --workspace=api-regin",
-    "start:app": "npm run start --workspace=app-regin"
+    "start:app": "npm run start --workspace=app-regin",
+    "test:app": "npm run test --workspace=app-regin"
   },
   "keywords": [],
   "author": "",

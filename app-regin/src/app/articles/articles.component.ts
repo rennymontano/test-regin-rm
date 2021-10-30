@@ -27,13 +27,11 @@ export class ArticlesComponent implements OnInit {
   }
 
   getDataArticles() {
+    this.orderedArticles = [];
     this.service.getArticles()
     .subscribe(
       (res: any) => {
-        this.orderedArticles =  this.orderDate(res.data);
-        if(this.orderedArticles.length === 0) {
-          this.getInitData()
-        }
+        this.orderedArticles =  res.data;
     })
   }
 
@@ -41,13 +39,16 @@ export class ArticlesComponent implements OnInit {
     this.service.getInitData()
     .subscribe(
       (res: any) => {
-        this.orderedArticles =  this.orderDate(res.data);
+        this.orderedArticles =  res.data;
     })
   }
 
   refreshArticle(event: any) {
-    this.orderedArticles = [];
-    this.getDataArticles();
+    if(this.orderedArticles.length === 0) {
+      this.getInitData()
+    } else {
+      this.getDataArticles();
+    }
   }
 
   openUrl(url: string) {
@@ -59,19 +60,10 @@ export class ArticlesComponent implements OnInit {
     data.isDelete = true;
     this.service.deleteArticle(id, data).subscribe(
       (res: any) => {
-        console.log(res)
         this.getDataArticles();
       }
     )
     event.stopPropagation();
-  }
-
-  orderDate(items: any[]): any[] {
-    return items.sort(function(a, b) {
-      a = moment(a.created_at, 'YYYY-MM-DD HH:mm:ss');
-      b = moment(b.created_at, 'YYYY-MM-DD HH:mm:ss');
-      return a > b ? -1 : a < b ? 1 : 0;
-    });
   }
 
 }
